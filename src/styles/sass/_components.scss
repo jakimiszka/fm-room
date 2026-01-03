@@ -5,8 +5,20 @@
     
 }
 
-.menu{
+.menuMobile{
+    width: 100%;
+    height: auto;
+    padding: v.$spacing-400 v.$spacing-500;
 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+
+    border: 1px solid white;
 }
 
 .shopNow{
@@ -14,5 +26,27 @@
 }
 
 .switchButton{
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: v.$spacing-200;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: v.$black;
+    padding: v.$spacing-100 v.$spacing-200;
 
+    &--left, 
+    &--right{
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 20px;
+            height: auto;
+        }
+    }
 }

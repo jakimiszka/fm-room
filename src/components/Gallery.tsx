@@ -1,18 +1,32 @@
+import { useState } from 'react';
 import mobileHero from '../assets/mobile-image-hero-1.jpg';
+import hero2 from '../assets/mobile-image-hero-2.jpg';
+import hero3 from '../assets/mobile-image-hero-3.jpg';
 import angleLeftIcon from '../assets/icon-angle-left.svg';
 import angleRightIcon from '../assets/icon-angle-right.svg';
 import arrowIcon from '../assets/icon-arrow.svg';
 
 export const Gallery = () => {
+    const images = [mobileHero, hero2, hero3];
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handlePrevious = () => {
+        setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    };
+
     return (
         <div className="gallery">
             <div className="gallery--displayed">
-                <img src={mobileHero} alt="Displayed artwork" />
+                <img src={images[currentIndex]} alt="Displayed artwork" />
                 <div className="switchButton">
-                    <div className="switchButton--left">
+                    <div className="switchButton--left" onClick={handlePrevious} style={{ cursor: 'pointer' }}>
                         <img src={angleLeftIcon} alt="Left angle icon" />
                     </div>
-                    <div className="switchButton--right">
+                    <div className="switchButton--right" onClick={handleNext} style={{ cursor: 'pointer' }}>
                         <img src={angleRightIcon} alt="Right angle icon" />
                     </div>
                 </div>

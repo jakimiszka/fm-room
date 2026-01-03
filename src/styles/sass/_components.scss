@@ -8,7 +8,7 @@
 .menuMobile{
     width: 100%;
     height: auto;
-    padding: v.$spacing-400 v.$spacing-500;
+    padding: v.$spacing-400 v.$spacing-400;
     position: absolute;
     top: 0;
     left: 0;
@@ -47,6 +47,8 @@
         font-size: 12px;
         width: 100%;
         text-align: right;
+        position: relative;
+        z-index: 15;
 
         li {
             display: inline-block;
@@ -72,17 +74,18 @@
         @include v.text-preset-4;
     }
 }
+.shopNow:hover{
+    background-color: v.$grey-100;
+}
 
 .switchButton{
     width: auto;
     height: auto;
     display: flex;
-    gap: v.$spacing-200;
     position: absolute;
     bottom: 0;
     right: 0;
     background-color: v.$black;
-    padding: v.$spacing-100 v.$spacing-200;
 
     &--left, 
     &--right{
@@ -91,16 +94,31 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: v.$spacing-300 v.$spacing-300; 
 
         img{
-            width: 20px;
+            width: 14px;
             height: auto;
         }
+    }
+    &--left:hover,
+    &--right:hover{
+        background-color: v.$grey-800;
     }
 }
 
 .visible{display: block;}
 .hidden{display: none;}
 .activeMobileMenu{
+    width: 100%;
     background-color: v.$white;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 5;
 }

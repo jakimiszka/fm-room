@@ -8,7 +8,7 @@ export const Footer = () => {
                 <img src={aboutDark} alt="About dark" />
             </div>
             <div className='footer--about'>
-                <h2>About our furniture</h2>
+                <h2>ABOUT OUR FURNITURE</h2>
                 <p>
                     Our multifunctional collection blends design and function 
                     to suit your individual taste. 

@@ -1,6 +1,7 @@
 import mobileHero from '../assets/mobile-image-hero-1.jpg';
 import angleLeftIcon from '../assets/icon-angle-left.svg';
 import angleRightIcon from '../assets/icon-angle-right.svg';
+import arrowIcon from '../assets/icon-arrow.svg';
 
 export const Gallery = () => {
     return (
@@ -25,7 +26,10 @@ export const Gallery = () => {
                     Create a room in your own style with our collection and 
                     make your property a reflection of you and what you love.
                 </p>
-                <button className='shopNow'>SHOP NOW</button>
+                <button className='shopNow'>
+                        <p>SHOP NOW</p>
+                        <img src={arrowIcon} alt="Arrow icon" />
+                </button>
             </div>
         </div>
     );

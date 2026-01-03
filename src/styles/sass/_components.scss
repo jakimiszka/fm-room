@@ -9,20 +9,68 @@
     width: 100%;
     height: auto;
     padding: v.$spacing-400 v.$spacing-500;
-
     position: absolute;
     top: 0;
     left: 0;
     z-index: 10;
-
     display: flex;
     justify-content: space-between;
 
-    border: 1px solid white;
+    &--logo{}
+
+    &--hamburger{
+        display: block;
+        width: auto;
+        height: auto;
+
+        img{
+            width: 20px;
+            height: auto;
+        }
+    }
+
+    &--close{
+        display: none;
+        width: auto;
+        height: auto;
+        
+        img{
+            width: 20px;
+            height: auto;
+        }
+    }
+
+    &--items{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        width: 100%;
+        text-align: right;
+
+        li {
+            display: inline-block;
+            padding-inline: .5rem;
+        }
+    }
 }
 
 .shopNow{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    gap: v.$spacing-100;
+    color: v.$black;
+    background-color: v.$white;
 
+    p{
+        padding: v.$spacing-100 v.$spacing-200;
+        @include v.text-preset-4;
+    }
 }
 
 .switchButton{
@@ -49,4 +97,10 @@
             height: auto;
         }
     }
+}
+
+.visible{display: block;}
+.hidden{display: none;}
+.activeMobileMenu{
+    background-color: v.$white;
 }

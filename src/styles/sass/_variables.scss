@@ -1,8 +1,12 @@
 $white: white;
 $black: black;
+
 $grey-200: hsl(0, 0%, 85%);
-$blue-50: hsl(215, 30%, 92%);
-$blue-100: hsl(213, 100%, 98%);
+$grey-500: hsl(0, 0%, 63%);
+$grey-800: hsl(0, 0%, 27%);
+$grey-100: hsl(0, 0%, 94%);
+$grey-50: hsl(0, 0%, 98%);
+
 $graient: linear-gradient(to bottom, white, #737373);
 
 $font-size-1: 72px;
@@ -10,8 +14,11 @@ $font-size-2: 48px;
 $font-size-3: 40px;
 $font-size-4: 32px;
 $font-size-5: 24px;
-$font-size-6: 15px;
-$font-size-7: 14px;
+$font-size-6: 20px;
+$font-size-7: 18px;
+$font-size-8: 16px;
+$font-size-9: 15px;
+$font-size-10: 14px;
 
 $spacing-0: 0px;
 $spacing-100: 8px;
@@ -20,10 +27,68 @@ $spacing-300: 24px;
 $spacing-400: 32px;
 $spacing-500: 40px;
 $spacing-600: 48px;
+$spacing-700: 56px;
 $spacing-800: 64px;
 $spacing-1000: 80px;
 
-$letter-spacing-1: 5px;
+$line-height-1: 90%;
+$line-height-2: 100%;
+$line-height-3: 140%;
 
-$font-family-1: 'Josefn Sans Light';
-$font-family-2: 'Alata Regular';
+$letter-spacing-1: -2px;
+$letter-spacing-2: 7px;
+$letter-spacing-3: -0.7px;
+$letter-spacing-4: -0.5px;
+$letter-spacing-5: 12.5px;
+
+$font-family-spartan: 'League Spartan', sans-serif;
+$semi-bold: 600;
+$bold: 700;
+$medium: 500;
+
+@mixin text-preset-1 {
+  font-family: $font-family-spartan;
+  font-size: $font-size-2;
+  line-height: $line-height-1;
+  letter-spacing: $letter-spacing-1;
+  font-weight: $semi-bold;
+}
+
+@mixin text-preset-2 {
+  font-family: $font-family-spartan;
+  font-size: $font-size-3;
+  line-height: $line-height-2;
+  letter-spacing: $letter-spacing-1;
+  font-weight: $semi-bold;
+}
+
+@mixin text-preset-3-bold {
+  font-family: $font-family-spartan;
+  font-size: $font-size-8;
+  line-height: $line-height-3;
+  letter-spacing: $letter-spacing-2;
+  font-weight: $bold;
+}
+
+@mixin text-preset-3-semibold {
+  font-family: $font-family-spartan;
+  font-size: $font-size-8;
+  line-height: $line-height-2;
+  letter-spacing: $letter-spacing-3;
+  font-weight: $semi-bold;
+}
+@mixin text-preset-3-medium {
+  font-family: $font-family-spartan;
+  font-size: $font-size-8;
+  line-height: $line-height-2;
+  letter-spacing: $letter-spacing-4;
+  font-weight: $medium;
+}
+
+@mixin text-preset-4 {
+  font-family: $font-family-spartan;
+  font-size: $font-size-9;
+  line-height: $line-height-2;
+  letter-spacing: $letter-spacing-5;
+  font-weight: $medium;
+}

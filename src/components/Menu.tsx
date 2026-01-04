@@ -27,7 +27,7 @@ export const Menu = () => {
                     onClick={handleToggleMenu}
                     style={{ cursor: 'pointer' }}
                 />
-                <img src={logoIcon} className={`menuMobile--logo ${isMenuOpen ? 'hidden' : 'visible'}`} alt="Logo" />
+                <img src={logoIcon} className="menuMobile--logo" alt="Logo" />
                 <div></div>
                 <ul className={`menuMobile--items ${isMenuOpen ? 'visible' : 'hidden'}`}>
                     <li>HOME</li>

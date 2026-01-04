@@ -18,9 +18,13 @@
         gap: 2rem;
         
         &--hamburger, 
-        &--close, 
-        .overlay {
+        &--close{
             display: none !important;
+        }
+
+         &--logo{
+            display: flex !important;
+            visibility: visible !important;
         }
         
         &--items {
@@ -35,8 +39,7 @@
         }
     }
 
-    &--logo{
-    }
+    &--logo{}
 
     &--hamburger{
         display: block;
@@ -62,7 +65,6 @@
 
     &--items{
         list-style: none;
-        padding: 0;
         margin: 0;
         font-size: 12px;
         width: 100%;
@@ -70,9 +72,32 @@
         position: relative;
         z-index: 15;
 
+        @include u.breakpoint('large') {
+            display: flex !important;
+            visibility: visible !important;
+        }
+
         li {
             display: inline-block;
             padding-inline: .5rem;
+            position: relative;
+  
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 24px;
+                height: 2px;
+                background-color: v.$white;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+            
+            &:hover::after {
+                opacity: 1;
+            }
         }
     }
 }
@@ -146,6 +171,12 @@
 .activeMobileMenu{
     width: 100%;
     background-color: v.$white;
+
+    @include u.breakpoint('large') {
+        display: flex !important;
+        visibility: visible !important;
+        background-color: transparent;
+    }
 }
 .overlay{
     position: fixed;
@@ -155,4 +186,9 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 5;
+
+    @include u.breakpoint('large') {
+        display: none !important;
+        visibility: hidden !important;
+    }
 }

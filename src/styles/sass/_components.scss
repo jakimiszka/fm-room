@@ -1,10 +1,6 @@
 @use './utils' as u;
 @use './variables' as v;
 
-.navabar{
-    
-}
-
 .menuMobile{
     width: 100%;
     height: auto;
@@ -16,7 +12,31 @@
     display: flex;
     justify-content: space-between;
 
-    &--logo{}
+    @include u.breakpoint('large') {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        
+        &--hamburger, 
+        &--close, 
+        .overlay {
+            display: none !important;
+        }
+        
+        &--items {
+            display: flex !important;
+            flex-direction: row;
+            color: v.$white;
+            
+            li {
+                margin-right: 1rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &--logo{
+    }
 
     &--hamburger{
         display: block;
@@ -79,18 +99,23 @@
 }
 
 .switchButton{
-    width: auto;
-    height: auto;
     display: flex;
     position: absolute;
     bottom: 0;
     right: 0;
     background-color: v.$black;
 
+    @include u.breakpoint('large'){
+        position: absolute;
+        display: flex;
+        width: calc((60% - 50%) / 0.66);
+        right: 25%;
+    }
+
     &--left, 
     &--right{
-        width: auto;
-        height: auto;
+        width: 50%;
+        height: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -99,6 +124,15 @@
         img{
             width: 14px;
             height: auto;
+        }
+
+        @include u.breakpoint('large'){
+            padding: v.$spacing-400 v.$spacing-400;
+
+            img{
+                width: 20px;
+                height: auto;
+            }
         }
     }
     &--left:hover,

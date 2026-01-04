@@ -7,16 +7,33 @@
 
     max-width: 450px;
     margin: 0 auto;
+
+    @include u.breakpoint('medium'){
+        max-width: 820px;
+    }
+
+    @include u.breakpoint('large'){
+        max-width: 1440px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .gallery{
     position: relative;
     width: 100%;
     height: auto;
+
+    @include u.breakpoint('large'){
+        height: 66vh;
+        flex: 1 1 auto;
+        display: flex;
+    }
     
     &--displayed{
-        display: block;
         position: relative;
+        display: block;        
         height: 100%;
 
         img{
@@ -24,6 +41,16 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        @include u.breakpoint('medium'){
+            height:60vh;
+        }
+
+        @include u.breakpoint('large'){
+            position: static;
+            width: 60%;
+            height: 100%;
         }
     }
 
@@ -33,10 +60,20 @@
         gap: v.$spacing-200;
         padding: v.$spacing-800 v.$spacing-500;
 
+        @include u.breakpoint('large'){
+            width: 40%;
+            justify-content: center;
+            padding: v.$spacing-800 v.$spacing-600;
+        }
+
         h1{
             @include v.text-preset-2;
             color: v.$black;
             padding-bottom: v.$spacing-100;
+
+            @include u.breakpoint('large'){
+                @include v.text-preset-1;
+            }
         }
         p{
             @include v.text-preset-3-medium;
@@ -57,6 +94,11 @@
     display: flex;
     flex-direction: column;
 
+    @include u.breakpoint('large'){
+        flex: 1 0 auto;
+        flex-direction: row;
+    }
+
     p{
         @include v.text-preset-3-medium;
         color: v.$white;
@@ -72,11 +114,20 @@
         background-color: v.$white;
         padding: v.$spacing-600 v.$spacing-500;
 
+        @include u.breakpoint('large'){
+            width: 50%;
+            justify-content: center;
+        }
+
         h2{
             @include v.text-preset-4;
             letter-spacing: 6px;
             font-size: v.$font-size-10;
             color: v.$black;
+
+            @include u.breakpoint('large'){
+                @include v.text-preset-3-bold;
+            }
         }
         p{
             @include v.text-preset-3-medium;
@@ -85,10 +136,19 @@
     }
 
     &--imgDark, &--imgLight{
+        @include u.breakpoint('large'){
+            width: 25%;
+        }
+        
         img{
             display: block;
             width: 100%;
             height: auto;
+            
+            @include u.breakpoint('large'){
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }
